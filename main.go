@@ -17,7 +17,6 @@ func main()  {
 	}
 	fmt.Println("Power by aboc  mayinhua@gmail.com")
 	fmt.Println(fmt.Sprintf("文件目录位于 %s",dir))
-	//dir = "/home/aboc/document/EhMALL/泰山·秋色 (2)/泰山·秋色"
 	http.Handle("/",http.FileServer(http.Dir(fmt.Sprintf("%s/",dir))))
 
 
