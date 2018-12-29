@@ -3,6 +3,7 @@
 
 #### Linux 
 $sudo chmod +x dirweb
+
 $./dirweb
 
 
