@@ -15,7 +15,8 @@ func main()  {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Power by aboc  mayinhua@gmail.com")
+	fmt.Println("程序：aboc (http://www.phpec.org)")
+	fmt.Println("如果使用存在问题，请访问 https://github.com/abocd/dirweb/releases 提交问题")
 	fmt.Println(fmt.Sprintf("文件目录位于 %s",dir))
 	http.Handle("/",http.FileServer(http.Dir(fmt.Sprintf("%s/",dir))))
 
