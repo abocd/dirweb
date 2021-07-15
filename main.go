@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -11,8 +12,11 @@ import (
 	"time"
 )
 
-func main() {
+var show bool
 
+func main() {
+	flag.BoolVar(&show, "show", false, "是否启动浏览器并显示")
+	flag.Parse()
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
 		log.Fatal(err)
@@ -38,8 +42,10 @@ func main() {
 	go startServer(serverPort)
 	url := fmt.Sprintf("http://127.0.0.1:%d/", serverPort)
 	time.Sleep(3 * time.Second)
-	fmt.Println("准备打开浏览器...")
-	runUrl(url)
+	if show {
+		fmt.Println("准备打开浏览器...")
+		runUrl(url)
+	}
 	<-findPort
 }
 

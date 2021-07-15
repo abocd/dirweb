@@ -9,3 +9,8 @@ $./dirweb
 
 ### windows 下
 点击  dirweb.exe 或者 命令行运行
+
+
+增加参数
+`-show=true`
+可以启动浏览器
